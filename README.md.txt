@@ -19,4 +19,21 @@ Trips above 60 mph showed higher Wh/mi than trips at or below 60 mph, meaning en
 - Python
 - Pandas
 - Matplotlib
-- Jupyter Notebook
+- Jupyter 
+
+## Engineering Analysis Features
+
+- City vs highway efficiency comparison
+- HVAC energy impact analysis
+- Elevation gain analysis
+- Efficiency classification system
+- Correlation matrix visualization
+
+## Engineering Concepts
+
+This project explores:
+- aerodynamic drag
+- thermal loads
+- elevation energy costs
+- operational efficiency
+- EV energy consumption trends
