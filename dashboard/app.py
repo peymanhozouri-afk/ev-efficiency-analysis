@@ -91,3 +91,56 @@ st.write("""
 - HVAC and temperature likely affect energy consumption.
 - Elevation gain appears correlated with higher energy usage.
 """)
+
+speed_input = st.sidebar.slider(
+    "Speed (mph)",
+    20,
+    90,
+    60
+)
+
+temp_input = st.sidebar.slider(
+    "Outside Temperature",
+    20,
+    110,
+    70
+)
+
+hvac_input = st.sidebar.checkbox("HVAC On")
+
+elevation_input = st.sidebar.slider(
+    "Elevation Gain (ft)",
+    0,
+    1000,
+    200
+)
+
+prediction_input = pd.DataFrame({
+    "speed_mph": [speed_input],
+    "outside_temp_f": [temp_input],
+    "elevation_gain_ft": [elevation_input],
+    "hvac_on": [int(hvac_input)]
+})
+
+predicted_efficiency = model.predict(prediction_input)[0]
+
+st.metric(
+    "Predicted Wh/mi",
+    round(predicted_efficiency, 1)
+)
+
+st.write("""
+Prediction model estimates EV energy consumption
+based on operating conditions including:
+- speed
+- temperature
+- HVAC usage
+- elevation gain
+""")
+
+coefficients = pd.DataFrame({
+    "Feature": X.columns,
+    "Coefficient": model.coef_
+})
+
+print(coefficients)
