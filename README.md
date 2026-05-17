@@ -1,63 +1,40 @@
 # ev-efficiency-analysis
 
-# EV Efficiency Analysis Dashboard
+# Tesla EV Telemetry Analysis Dashboard
 
 ## Overview
 
-This project analyzes Tesla EV driving data using Python, Pandas, Matplotlib, and Streamlit.
+Interactive EV telemetry dashboard analyzing vehicle efficiency,
+temperature effects, HVAC load, and operational trends.
 
-The dashboard allows users to:
-- analyze EV efficiency
-- filter trips by driving type
-- explore temperature effects
-- visualize efficiency trends interactively
+## Features
 
----
+- Interactive Streamlit dashboard
+- EV efficiency analysis
+- City vs highway comparison
+- Temperature analysis
+- HVAC impact analysis
+- Machine learning efficiency prediction
+- Correlation analysis
 
 ## Tools Used
 
 - Python
 - Pandas
 - Matplotlib
+- Scikit-learn
 - Streamlit
-- Jupyter Notebook
-- GitHub
 
----
+## Engineering Concepts
 
-## Features
+- aerodynamic drag
+- thermal load
+- rolling resistance
+- energy efficiency
+- predictive modeling
 
-- Interactive dashboard
-- Speed vs efficiency analysis
-- Temperature filtering
-- Highway vs city filtering
-- Efficiency distribution histogram
-- Engineering findings section
+## Future Improvements
 
----
-
-## Dashboard Preview
-
-![Dashboard Screenshot](graphs/dashboard_screenshot.png)
-
----
-
-## Engineering Findings
-
-- Higher speeds generally increased Wh/mi.
-- Highway driving conditions reduced efficiency.
-- HVAC and temperature likely affect energy consumption.
-- Elevation gain appears correlated with higher energy usage.
-
----
-
-## Project Structure
-
-```text
-ev-efficiency-analysis
-│
-├── dashboard
-├── data
-├── graphs
-├── notebook
-└── README.md
+- real-time telemetry
+- charging curve analysis
+- battery degradation modeling

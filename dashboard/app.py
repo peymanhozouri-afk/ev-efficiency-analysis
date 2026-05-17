@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 st.title("Tesla EV Efficiency Dashboard")
 
@@ -39,6 +40,20 @@ else:
 filtered_df = filtered_df[
     filtered_df["outside_temp_f"] <= selected_temp
 ]
+
+# Train prediction model
+
+X = df[[
+    "speed_mph",
+    "outside_temp_f",
+    "elevation_gain_ft",
+    "hvac_on"
+]]
+
+y = df["wh_per_mile"]
+
+model = LinearRegression()
+model.fit(X, y)
 
 # Summary metrics
 st.header("Summary Metrics")
@@ -123,6 +138,12 @@ prediction_input = pd.DataFrame({
 })
 
 predicted_efficiency = model.predict(prediction_input)[0]
+
+predicted_efficiency = max(180, min(predicted_efficiency, 450))
+
+st.caption(
+    "Prediction is based on a small sample dataset, so values are approximate and mainly for demonstrating the workflow."
+)
 
 st.metric(
     "Predicted Wh/mi",
